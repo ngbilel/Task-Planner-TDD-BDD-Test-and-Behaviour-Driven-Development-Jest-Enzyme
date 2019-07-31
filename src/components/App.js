@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap' 
+import Task from './Task'
 
 class App extends Component {
     constructor(propos){
@@ -26,7 +27,7 @@ class App extends Component {
                 <div className='task-list'>
                 {
                         this.state.tasks.map(task => {
-                             return (<div key={task.id}></div>)
+                             return (<Task key={task.id}></Task>)
                         })
                 }
                 </div>

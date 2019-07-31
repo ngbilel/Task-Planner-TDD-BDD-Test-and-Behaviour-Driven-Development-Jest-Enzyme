@@ -35,6 +35,10 @@ describe('App', ()=> {
             expect(app.find('.task-list').children().length).toEqual(1);
         })
 
+        it('Creates a Task compoenent', ()=>{
+            expect(app.find('Task').exists()).toBe(true);
+        })
+
     })
 
 })
