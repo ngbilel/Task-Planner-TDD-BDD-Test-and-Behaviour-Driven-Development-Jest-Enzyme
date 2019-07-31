@@ -6,8 +6,15 @@ import { isTSAnyKeyword, isThisTypeAnnotation, isBigIntLiteral } from '@babel/ty
 const app = shallow(<App/>);
 
 //check that the component render correctly 
-
 it('render correctly', ()=>{
     expect(app).toMatchSnapshot();
 })
 
+it('initializes the `state`  with  an empty list of tasks',()=>{
+    expect(app.state().tasks).toEqual([])
+})
+
+it('add a new task to `state` when clicking the `add task` button', ()=>{
+    app.find('.btn-add').simulate('click');
+    expect(app.state().tasks).toEqual([{id:1}]);
+})
