@@ -18,3 +18,8 @@ it('add a new task to `state` when clicking the `add task` button', ()=>{
     app.find('.btn-add').simulate('click');
     expect(app.state().tasks).toEqual([{id:1}]);
 })
+
+it('add a new task to the render list when clicking the `add task` button',()=>{
+    app.find('.btn-add').simulate('click');
+    expect(app.find('.task-list').children().length).toEqual(2);
+})

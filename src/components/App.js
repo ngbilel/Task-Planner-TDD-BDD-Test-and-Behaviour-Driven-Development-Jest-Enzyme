@@ -23,7 +23,14 @@ class App extends Component {
         return (
             <div>
                 <h3> Task Planner </h3>
-                <Button className="btn-add" onClick={this.addTask}></Button>
+                <div className='task-list'>
+                {
+                        this.state.tasks.map(task => {
+                             return (<div key={task.id}></div>)
+                        })
+                }
+                </div>
+                <Button className="btn-add" onClick={this.addTask}>Add Task</Button>
             </div>
         )
     }
